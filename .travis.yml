@@ -1,8 +1,5 @@
 language: scala
 
-scala:
-  - 2.10.6
-
 jdk:
   - oraclejdk7
 
@@ -11,6 +8,9 @@ cache:
   directories:
     - $HOME/.ivy2/cache
     - $HOME/.sbt/boot/
+
+script:
+  - sbt scripted
 
 before_cache:
   # Tricks to avoid unnecessary cache updates
