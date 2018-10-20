@@ -9,8 +9,10 @@ Add this snippet to your `project/plugins.sbt`
 ```scala
 resolvers += Resolver.url("fmonniot", url("https://dl.bintray.com/fmonniot/sbt-plugins"))(Resolver.ivyStylePatterns)
 
-addSbtPlugin("eu.monniot.redis" % "redis-plugin" % "0.5.0")
+addSbtPlugin("eu.monniot.redis" % "redis-plugin" % "0.6.0")
 ```
+
+_Warning: `redis-plugin` version 0.6+ support SBT 1.x only, use version 0.5.0 if you have to stay on 0.13.x_
 
 You can now configure the plugin:
 
