@@ -1,7 +1,1 @@
-logLevel := Level.Warn
-
-addSbtPlugin("me.lessis" % "bintray-sbt" % "0.3.0")
-
-libraryDependencies <+= sbtVersion { sv =>
-  "org.scala-sbt" % "scripted-plugin" % sv
-}
+addSbtPlugin("org.foundweekends" % "sbt-bintray" % "0.5.4")

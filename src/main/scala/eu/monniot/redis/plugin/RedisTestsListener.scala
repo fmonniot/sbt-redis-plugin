@@ -25,7 +25,7 @@ class RedisTestsListener(logger: Logger,
     startRedisServer(logger, redisExecProviders, instances.filter(m => m.isRedisServer))
   }
 
-  override def doComplete(finalResult: TestResult.Value): Unit = {
+  override def doComplete(finalResult: TestResult): Unit = {
     logger.info("Stopping redis instances")
 
     if (redisServers != null) {
@@ -54,7 +54,7 @@ class RedisTestsListener(logger: Logger,
       }
   }
 
-  private def startRedisServer(logger: Logger, providers: Map[String, RedisExecProvider], redisList: Seq[RedisInstance]) = {
+  private def startRedisServer(logger: Logger, providers: Map[String, RedisExecProvider], redisList: Seq[RedisInstance]): Unit = {
     redisServers = redisList.map { config =>
 
       val port = config.ports.copy().next()
@@ -74,7 +74,7 @@ class RedisTestsListener(logger: Logger,
     }
   }
 
-  private def startRedisCluster(logger: Logger, providers: Map[String, RedisExecProvider], redis: Seq[RedisInstance]) = {
+  private def startRedisCluster(logger: Logger, providers: Map[String, RedisExecProvider], redis: Seq[RedisInstance]): Unit = {
     redisClusters = redis.map { config =>
 
       logger.info("Starting Redis Cluster")
@@ -134,5 +134,5 @@ class RedisTestsListener(logger: Logger,
 
   override def endGroup(name: String, t: Throwable): Unit = {}
 
-  override def endGroup(name: String, result: TestResult.Value): Unit = {}
+  override def endGroup(name: String, result: TestResult): Unit = {}
 }
