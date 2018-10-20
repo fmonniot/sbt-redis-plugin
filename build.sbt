@@ -10,7 +10,7 @@ version := "0.5.0"
 
 resolvers += Resolver.jcenterRepo
 
-libraryDependencies += "eu.monniot.redis" % "embedded-redis" % "1.4.0"
+libraryDependencies += "eu.monniot.redis" % "embedded-redis" % "1.6.0"
 
 // Scripted - sbt plugin tests
 scriptedSettings
