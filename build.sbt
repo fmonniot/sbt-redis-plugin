@@ -4,7 +4,7 @@ lazy val `redis-plugin` = (project in file("."))
     name := "redis-plugin",
     organization := "eu.monniot.redis",
 
-    version := "0.6.0",
+    version := "0.6.1-SNAPSHOT",
 
     resolvers += Resolver.jcenterRepo,
     libraryDependencies += "eu.monniot.redis" % "embedded-redis" % "1.6.0"
